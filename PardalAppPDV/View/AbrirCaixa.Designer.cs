@@ -180,6 +180,7 @@
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AbrirCaixa";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AbrirCaixa";
             Load += AbrirCaixa_Load;

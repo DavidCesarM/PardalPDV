@@ -1,0 +1,6 @@
+C:\Users\david\Desktop\C# deploys\PardalAppPDV.exe
+C:\Users\david\Desktop\C# deploys\PardalAppPDV.dll
+C:\Users\david\Desktop\C# deploys\PardalAppPDV.deps.json
+C:\Users\david\Desktop\C# deploys\PardalAppPDV.runtimeconfig.json
+C:\Users\david\Desktop\C# deploys\PardalAppPDV.pdb
+C:\Users\david\Desktop\C# deploys\FontAwesome.Sharp.dll

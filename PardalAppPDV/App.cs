@@ -11,7 +11,7 @@ namespace PardalAppPDV
     {
 
 
-        public static IconButton btnAbrirCaixa_;
+        public static IconButton? btnAbrirCaixa_;
 
         //PrivateFontCollection font = new PrivateFontCollection();
         //font.AddFontFile(@"C:\Users\david\Desktop\Projeto\PardalAppPDV\PardalAppPDV\Fonts\Picole-stencil.ttf");
@@ -24,28 +24,49 @@ namespace PardalAppPDV
             content.Appearance = TabAppearance.FlatButtons;
             content.SizeMode = TabSizeMode.Fixed;
 
-
         }
 
 
 
         private void App_Load(object sender, EventArgs e)
         {
+            setSizeAndLocationsOfControls();
 
-
-            dgInfosCaixa.EnableHeadersVisualStyles = false;
-
-            //dgInfosCaixa.ForeColor = Color.White;
+            dgInfo.EnableHeadersVisualStyles = false;
+            dgPesquisar.EnableHeadersVisualStyles = false;
             lblSideItemSelecionado.BringToFront();
-
-          // dgInfosCaixa.Font = new Font("Segoe UI", 30);
             frmMessages.ShowMsg("Logado com suceso! Bem Vindo!", "sucess", this, 400, duration: 3000);
-
+            lblSideItemSelecionado.Location = new Point(sideMenu.Width - lblSideItemSelecionado.Width, 0);
+            pbLogo.Location = new Point(Convert.ToInt32((sideHeader.Width / 2) - (pbLogo.Width / 2)), Convert.ToInt32((sideHeader.Height / 2) - (pbLogo.Height / 2)));
             btnAbrirCaixa_ = btnAbrirCaixa;
 
-
+            //sideMenu.Font = new Font("Segoe UI", 9);
         }
 
+
+        private void setSizeAndLocationsOfControls()
+        {
+
+            //############################## SIDE MENU SIZES ############################################################
+            sidebar.Size = new Size(Maths.percent(this.Width, 15), this.Height);
+
+            sideMenu.Size = new Size(sidebar.Width, Maths.percent(sidebar.Height, 70));
+            sideHeader.Size = new Size(sidebar.Width, Maths.percent(sidebar.Height, 20));
+
+            /* foreach (Control c in sideMenu.Controls)
+             {
+                 c.Size = new Size(sideMenu.Width, Maths.percent(sideMenu.Height, 10));
+             }
+             lblSideItemSelecionado.Size = new Size(5, btnSideVendas.Height);
+            */
+
+            sideFooter.Size = new Size(sidebar.Width, Maths.percent(sidebar.Height, 15));
+            //##########################################################################################
+
+            //############################## HEADER #############################################################
+            header.Height = Maths.percent(this.Height, 5);
+            pbLogo.Location = new Point((sideHeader.Width / 2) - (pbLogo.Width / 2), (sideHeader.Height / 2) - (pbLogo.Height / 2));
+        }
         private void App_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -59,38 +80,38 @@ namespace PardalAppPDV
 
         private void btnSideDescontos_Click(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 60;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 1;
             content.SelectedIndex = 1;
         }
 
         private void btnSideSangria_Click(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 120;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 2;
             content.SelectedIndex = 2;
 
         }
 
         private void btnSideStatus_Click(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 180;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 3;
             content.SelectedIndex = 3;
         }
 
         private void btnSideRetirada_Click(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 240;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 4;
             content.SelectedIndex = 4;
         }
 
         private void btnSideMovimentacoes_Click(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 300;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 5;
             content.SelectedIndex = 5;
         }
 
         private void btnSideFecharCaixa_Click_1(object sender, EventArgs e)
         {
-            lblSideItemSelecionado.Top = 360;
+            lblSideItemSelecionado.Top = lblSideItemSelecionado.Height * 6;
             content.SelectedIndex = 6;
         }
 
@@ -107,14 +128,14 @@ namespace PardalAppPDV
         }
         private void btnSideCaixa_MouseEnter(object sender, EventArgs e)
         {
-            btnSideCaixa.ForeColor = Color.White;
-            btnSideCaixa.IconColor = Color.White;
+            btnSideVendas.ForeColor = Color.White;
+            btnSideVendas.IconColor = Color.White;
         }
 
         private void btnSideCaixa_MouseLeave(object sender, EventArgs e)
         {
-            btnSideCaixa.ForeColor = Color.FromArgb(11, 19, 139);
-            btnSideCaixa.IconColor = Color.FromArgb(11, 19, 139);
+            btnSideVendas.ForeColor = Color.FromArgb(11, 19, 139);
+            btnSideVendas.IconColor = Color.FromArgb(11, 19, 139);
         }
 
         private void btnSideDescontos_MouseEnter(object sender, EventArgs e)

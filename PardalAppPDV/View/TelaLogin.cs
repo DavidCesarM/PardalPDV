@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
 
+
 namespace PardalAppPDV.View
 {
     public partial class TelaLogin : Form
@@ -24,18 +25,44 @@ namespace PardalAppPDV.View
 
         private void TelaLogin_Load(object sender, EventArgs e)
         {
-           
+
+            setSizeAndPointsOfControls();
+
             VisualGraphs.RoundBoders(this);
             VisualGraphs.RoundBoders(logo);
             VisualGraphs.RoundBoders(logoShadow);
-            VisualGraphs.RoundBoders(pnBoasvindas, true, false, true, false);
-         
-            lblSenha.Location = new Point(3, 320);
+            VisualGraphs.RoundBoders(pnTitulo, true, false, true, false);
+
+            lblSenha.Location = new Point(3, txtSenha.Top);
             lblListraSenha.Width = 0;
+            pnLoginHolder.BringToFront();
 
         }
 
+        private void setSizeAndPointsOfControls()
+        {
+            double h = System.Windows.SystemParameters.FullPrimaryScreenHeight;
+            double w = System.Windows.SystemParameters.FullPrimaryScreenWidth;
 
+            this.Size = new Size(Maths.percent(w, 60), Maths.percent(70, h));
+            pnLogin.Width = Maths.percent(this.Width, 50);
+            pnTitulo.Width = Maths.percent(this.Width, 50);
+
+            pbTitulo.Size = new Size(Maths.percent(this.Width, 40), Maths.percent(this.Height, 8));
+            pbTitulo.Location = new Point(Convert.ToInt32((pnTitulo.Width / 2) - (pbTitulo.Width / 2)), Convert.ToInt32(((pnTitulo.Height / 2) - (pbTitulo.Height / 2))));
+
+
+            pnFlakesHolder.Location = new Point(Convert.ToInt32((pnLogin.Width - pnFlakesHolder.Width) + 10), 0);
+
+            pbCoracao.Size = new Size(Maths.percent(pnTitulo.Width, 40), Maths.percent(pnTitulo.Height, 30));
+            pbCoracao.Location = new Point((pnTitulo.Width - pbCoracao.Width) + (pbCoracao.Width * 10) / 100, pbTitulo.Top + pbTitulo.Height);
+            pnLoginHolder.Location = new Point(Convert.ToInt32((pnLogin.Width / 2) - (pnLoginHolder.Width / 2)), Convert.ToInt32((pnLogin.Height / 2) - (pnLoginHolder.Height / 2)));
+
+            pbCupcake.Size = new Size(Maths.percent(pnLogin.Width, 35), Maths.percent(pnLogin.Height, 30));
+            pbCupcake.Location = new Point(pnLoginHolder.Left-pbCupcake.Width, pbOndasCinzas.Top-pbCupcake.Height);
+
+            this.Location = new Point(Convert.ToInt32((w / 2) - (this.Width / 2)), Convert.ToInt32((h / 2) - (this.Height / 2)));
+        }
 
 
         private void btnSair_Click_1(object sender, EventArgs e)
@@ -71,7 +98,7 @@ namespace PardalAppPDV.View
             shadowBtnSair.BackColor = Color.White;
         }
 
-//##############################################################################################
+        //##############################################################################################
 
         private void btnLogar_Click_1(object sender, EventArgs e)
         {
@@ -106,7 +133,7 @@ namespace PardalAppPDV.View
             lblListraNome.Width = 0;
             timer3.Stop();
             txtNome.ForeColor = SystemColors.ControlDarkDark;
-            lblNome.Location = new Point(3, 268);
+            lblNome.Location = new Point(3, txtNome.Top);
 
         }
 
@@ -128,7 +155,7 @@ namespace PardalAppPDV.View
             timer5.Stop();
             txtSenha.ForeColor = SystemColors.ControlDarkDark;
 
-            lblSenha.Location = new Point(3, 320);
+            lblSenha.Location = new Point(3, txtSenha.Top);
 
         }
         //#########################################################################################################
@@ -176,14 +203,6 @@ namespace PardalAppPDV.View
             }
 
         }
-
-
-
-
-
-
-
-
 
 
     }
