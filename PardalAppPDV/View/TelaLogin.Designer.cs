@@ -30,21 +30,21 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
-            shadowBtnSair = new FontAwesome.Sharp.IconButton();
             pnLoginHolder = new Panel();
-            lblListraSenha = new Label();
+            pnloginBot = new Panel();
+            pnButtonsLoginHolder = new Panel();
+            btnLogar = new FontAwesome.Sharp.IconButton();
+            btnSair = new FontAwesome.Sharp.IconButton();
             lblListraNome = new Label();
-            txtSenha = new TextBox();
+            lblNome = new Label();
+            lblListraSenha = new Label();
             lblListraCinzaSenha = new Label();
             lblListraCinzaNome = new Label();
+            lblSenha = new Label();
+            txtNome = new TextBox();
+            txtSenha = new TextBox();
             logo = new PictureBox();
             logoShadow = new PictureBox();
-            txtNome = new TextBox();
-            lblSenha = new Label();
-            lblNome = new Label();
-            btnSair = new FontAwesome.Sharp.IconButton();
-            btnLogar = new FontAwesome.Sharp.IconButton();
-            shadowBtnEntrar = new FontAwesome.Sharp.IconButton();
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             timer3 = new System.Windows.Forms.Timer(components);
@@ -64,8 +64,9 @@
             pbFlakes7 = new FontAwesome.Sharp.IconPictureBox();
             pbFlakes8 = new FontAwesome.Sharp.IconPictureBox();
             pbCupcake = new PictureBox();
-            pbOndasCinzas = new PictureBox();
             pnLoginHolder.SuspendLayout();
+            pnloginBot.SuspendLayout();
+            pnButtonsLoginHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)logoShadow).BeginInit();
             pnTitulo.SuspendLayout();
@@ -83,87 +84,131 @@
             ((System.ComponentModel.ISupportInitialize)pbFlakes7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFlakes8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCupcake).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbOndasCinzas).BeginInit();
             SuspendLayout();
-            // 
-            // shadowBtnSair
-            // 
-            shadowBtnSair.BackColor = Color.White;
-            shadowBtnSair.FlatAppearance.BorderColor = Color.White;
-            shadowBtnSair.FlatAppearance.MouseDownBackColor = Color.Silver;
-            shadowBtnSair.FlatAppearance.MouseOverBackColor = Color.Silver;
-            shadowBtnSair.FlatStyle = FlatStyle.Flat;
-            shadowBtnSair.ForeColor = Color.White;
-            shadowBtnSair.IconChar = FontAwesome.Sharp.IconChar.None;
-            shadowBtnSair.IconColor = Color.White;
-            shadowBtnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            shadowBtnSair.Location = new Point(141, 349);
-            shadowBtnSair.Name = "shadowBtnSair";
-            shadowBtnSair.Size = new Size(93, 44);
-            shadowBtnSair.TabIndex = 73;
-            shadowBtnSair.UseVisualStyleBackColor = false;
             // 
             // pnLoginHolder
             // 
-            pnLoginHolder.Controls.Add(lblListraSenha);
-            pnLoginHolder.Controls.Add(lblListraNome);
-            pnLoginHolder.Controls.Add(txtSenha);
-            pnLoginHolder.Controls.Add(lblListraCinzaSenha);
-            pnLoginHolder.Controls.Add(lblListraCinzaNome);
+            pnLoginHolder.Controls.Add(pnloginBot);
             pnLoginHolder.Controls.Add(logo);
             pnLoginHolder.Controls.Add(logoShadow);
-            pnLoginHolder.Controls.Add(txtNome);
-            pnLoginHolder.Controls.Add(lblSenha);
-            pnLoginHolder.Controls.Add(lblNome);
-            pnLoginHolder.Controls.Add(btnSair);
-            pnLoginHolder.Controls.Add(btnLogar);
-            pnLoginHolder.Controls.Add(shadowBtnSair);
-            pnLoginHolder.Controls.Add(shadowBtnEntrar);
             pnLoginHolder.Location = new Point(151, 137);
             pnLoginHolder.Name = "pnLoginHolder";
             pnLoginHolder.Size = new Size(277, 403);
             pnLoginHolder.TabIndex = 3;
             // 
-            // lblListraSenha
+            // pnloginBot
             // 
-            lblListraSenha.BackColor = Color.Navy;
-            lblListraSenha.ForeColor = Color.Cornsilk;
-            lblListraSenha.Location = new Point(3, 327);
-            lblListraSenha.MaximumSize = new Size(274, 20);
-            lblListraSenha.Name = "lblListraSenha";
-            lblListraSenha.Size = new Size(274, 2);
-            lblListraSenha.TabIndex = 87;
+            pnloginBot.Controls.Add(pnButtonsLoginHolder);
+            pnloginBot.Controls.Add(lblListraNome);
+            pnloginBot.Controls.Add(lblNome);
+            pnloginBot.Controls.Add(lblListraSenha);
+            pnloginBot.Controls.Add(lblListraCinzaSenha);
+            pnloginBot.Controls.Add(lblListraCinzaNome);
+            pnloginBot.Controls.Add(lblSenha);
+            pnloginBot.Controls.Add(txtNome);
+            pnloginBot.Controls.Add(txtSenha);
+            pnloginBot.Location = new Point(0, 213);
+            pnloginBot.Name = "pnloginBot";
+            pnloginBot.Size = new Size(277, 190);
+            pnloginBot.TabIndex = 84;
+            // 
+            // pnButtonsLoginHolder
+            // 
+            pnButtonsLoginHolder.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pnButtonsLoginHolder.Controls.Add(btnLogar);
+            pnButtonsLoginHolder.Controls.Add(btnSair);
+            pnButtonsLoginHolder.Location = new Point(30, 114);
+            pnButtonsLoginHolder.Name = "pnButtonsLoginHolder";
+            pnButtonsLoginHolder.Size = new Size(211, 52);
+            pnButtonsLoginHolder.TabIndex = 89;
+            // 
+            // btnLogar
+            // 
+            btnLogar.BackColor = Color.FromArgb(76, 195, 223);
+            btnLogar.Cursor = Cursors.Hand;
+            btnLogar.FlatAppearance.BorderColor = Color.White;
+            btnLogar.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
+            btnLogar.FlatStyle = FlatStyle.Flat;
+            btnLogar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogar.ForeColor = Color.White;
+            btnLogar.IconChar = FontAwesome.Sharp.IconChar.IceCream;
+            btnLogar.IconColor = Color.White;
+            btnLogar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogar.IconSize = 20;
+            btnLogar.Location = new Point(3, 5);
+            btnLogar.Name = "btnLogar";
+            btnLogar.Size = new Size(93, 44);
+            btnLogar.TabIndex = 77;
+            btnLogar.Text = "Entrar";
+            btnLogar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLogar.UseVisualStyleBackColor = false;
+            btnLogar.Click += btnLogar_Click_1;
+            btnLogar.MouseEnter += btnLogar_MouseEnter;
+            btnLogar.MouseLeave += btnLogar_MouseLeave;
+            // 
+            // btnSair
+            // 
+            btnSair.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSair.BackColor = SystemColors.Window;
+            btnSair.Cursor = Cursors.Hand;
+            btnSair.FlatAppearance.BorderColor = Color.Red;
+            btnSair.FlatAppearance.MouseDownBackColor = Color.LightSalmon;
+            btnSair.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSair.ForeColor = Color.Red;
+            btnSair.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            btnSair.IconColor = Color.Red;
+            btnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSair.IconSize = 25;
+            btnSair.Location = new Point(115, 5);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(93, 44);
+            btnSair.TabIndex = 78;
+            btnSair.Text = "Sair";
+            btnSair.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click_1;
+            btnSair.MouseEnter += btnSair_MouseEnter;
+            btnSair.MouseLeave += btnSair_MouseLeave;
             // 
             // lblListraNome
             // 
             lblListraNome.BackColor = Color.Navy;
             lblListraNome.ForeColor = Color.Cornsilk;
-            lblListraNome.Location = new Point(3, 277);
+            lblListraNome.Location = new Point(2, 45);
             lblListraNome.MaximumSize = new Size(274, 20);
             lblListraNome.Name = "lblListraNome";
             lblListraNome.Size = new Size(274, 2);
-            lblListraNome.TabIndex = 86;
+            lblListraNome.TabIndex = 88;
             // 
-            // txtSenha
+            // lblNome
             // 
-            txtSenha.BackColor = Color.White;
-            txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSenha.ForeColor = SystemColors.ControlDarkDark;
-            txtSenha.Location = new Point(3, 306);
-            txtSenha.Name = "txtSenha";
-            txtSenha.PlaceholderText = "Senha";
-            txtSenha.Size = new Size(274, 20);
-            txtSenha.TabIndex = 1;
-            txtSenha.UseSystemPasswordChar = true;
-            txtSenha.Enter += txtSenha_Enter_1;
-            txtSenha.Leave += txtSenha_Leave_1;
+            lblNome.AutoSize = true;
+            lblNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNome.ForeColor = Color.DarkOrange;
+            lblNome.Location = new Point(-1, 4);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(52, 20);
+            lblNome.TabIndex = 79;
+            lblNome.Text = "Nome";
+            lblNome.Visible = false;
+            // 
+            // lblListraSenha
+            // 
+            lblListraSenha.BackColor = Color.Navy;
+            lblListraSenha.ForeColor = Color.Cornsilk;
+            lblListraSenha.Location = new Point(2, 100);
+            lblListraSenha.MaximumSize = new Size(274, 20);
+            lblListraSenha.Name = "lblListraSenha";
+            lblListraSenha.Size = new Size(274, 2);
+            lblListraSenha.TabIndex = 87;
             // 
             // lblListraCinzaSenha
             // 
             lblListraCinzaSenha.BackColor = SystemColors.AppWorkspace;
             lblListraCinzaSenha.ForeColor = Color.Cornsilk;
-            lblListraCinzaSenha.Location = new Point(3, 327);
+            lblListraCinzaSenha.Location = new Point(2, 100);
             lblListraCinzaSenha.MaximumSize = new Size(274, 20);
             lblListraCinzaSenha.Name = "lblListraCinzaSenha";
             lblListraCinzaSenha.Size = new Size(274, 2);
@@ -173,11 +218,53 @@
             // 
             lblListraCinzaNome.BackColor = SystemColors.AppWorkspace;
             lblListraCinzaNome.ForeColor = Color.Cornsilk;
-            lblListraCinzaNome.Location = new Point(4, 277);
+            lblListraCinzaNome.Location = new Point(-2, 45);
             lblListraCinzaNome.MaximumSize = new Size(274, 20);
             lblListraCinzaNome.Name = "lblListraCinzaNome";
             lblListraCinzaNome.Size = new Size(274, 2);
             lblListraCinzaNome.TabIndex = 84;
+            // 
+            // lblSenha
+            // 
+            lblSenha.AutoSize = true;
+            lblSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSenha.ForeColor = Color.DarkOrange;
+            lblSenha.Location = new Point(2, 56);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(51, 20);
+            lblSenha.TabIndex = 80;
+            lblSenha.Text = "Senha";
+            lblSenha.Visible = false;
+            // 
+            // txtNome
+            // 
+            txtNome.BackColor = Color.White;
+            txtNome.BorderStyle = BorderStyle.None;
+            txtNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNome.ForeColor = SystemColors.ControlDarkDark;
+            txtNome.Location = new Point(2, 22);
+            txtNome.MaximumSize = new Size(274, 20);
+            txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Nome";
+            txtNome.Size = new Size(274, 20);
+            txtNome.TabIndex = 0;
+            txtNome.Enter += txtNome_Enter_1;
+            txtNome.Leave += txtNome_Leave_1;
+            // 
+            // txtSenha
+            // 
+            txtSenha.BackColor = Color.White;
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSenha.ForeColor = SystemColors.ControlDarkDark;
+            txtSenha.Location = new Point(2, 79);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PlaceholderText = "Senha";
+            txtSenha.Size = new Size(274, 20);
+            txtSenha.TabIndex = 1;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.Enter += txtSenha_Enter_1;
+            txtSenha.Leave += txtSenha_Leave_1;
             // 
             // logo
             // 
@@ -198,111 +285,6 @@
             logoShadow.SizeMode = PictureBoxSizeMode.StretchImage;
             logoShadow.TabIndex = 83;
             logoShadow.TabStop = false;
-            // 
-            // txtNome
-            // 
-            txtNome.BackColor = Color.White;
-            txtNome.BorderStyle = BorderStyle.None;
-            txtNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNome.ForeColor = SystemColors.ControlDarkDark;
-            txtNome.Location = new Point(3, 254);
-            txtNome.MaximumSize = new Size(274, 20);
-            txtNome.Name = "txtNome";
-            txtNome.PlaceholderText = "Nome";
-            txtNome.Size = new Size(274, 20);
-            txtNome.TabIndex = 0;
-            txtNome.Enter += txtNome_Enter_1;
-            txtNome.Leave += txtNome_Leave_1;
-            // 
-            // lblSenha
-            // 
-            lblSenha.AutoSize = true;
-            lblSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSenha.ForeColor = Color.DarkOrange;
-            lblSenha.Location = new Point(3, 283);
-            lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(51, 20);
-            lblSenha.TabIndex = 80;
-            lblSenha.Text = "Senha";
-            lblSenha.Visible = false;
-            // 
-            // lblNome
-            // 
-            lblNome.AutoSize = true;
-            lblNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNome.ForeColor = Color.DarkOrange;
-            lblNome.Location = new Point(3, 236);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(52, 20);
-            lblNome.TabIndex = 79;
-            lblNome.Text = "Nome";
-            lblNome.Visible = false;
-            // 
-            // btnSair
-            // 
-            btnSair.BackColor = SystemColors.Window;
-            btnSair.Cursor = Cursors.Hand;
-            btnSair.FlatAppearance.BorderColor = Color.Red;
-            btnSair.FlatAppearance.MouseDownBackColor = Color.LightSalmon;
-            btnSair.FlatAppearance.MouseOverBackColor = Color.Red;
-            btnSair.FlatStyle = FlatStyle.Flat;
-            btnSair.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSair.ForeColor = Color.Red;
-            btnSair.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            btnSair.IconColor = Color.Red;
-            btnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSair.IconSize = 25;
-            btnSair.Location = new Point(144, 346);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(93, 44);
-            btnSair.TabIndex = 78;
-            btnSair.Text = "Sair";
-            btnSair.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSair.UseVisualStyleBackColor = false;
-            btnSair.Click += btnSair_Click_1;
-            btnSair.MouseEnter += btnSair_MouseEnter;
-            btnSair.MouseLeave += btnSair_MouseLeave;
-            // 
-            // btnLogar
-            // 
-            btnLogar.BackColor = Color.FromArgb(76, 195, 223);
-            btnLogar.Cursor = Cursors.Hand;
-            btnLogar.FlatAppearance.BorderColor = Color.White;
-            btnLogar.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
-            btnLogar.FlatStyle = FlatStyle.Flat;
-            btnLogar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogar.ForeColor = Color.White;
-            btnLogar.IconChar = FontAwesome.Sharp.IconChar.IceCream;
-            btnLogar.IconColor = Color.White;
-            btnLogar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLogar.IconSize = 20;
-            btnLogar.Location = new Point(25, 346);
-            btnLogar.Name = "btnLogar";
-            btnLogar.Size = new Size(93, 44);
-            btnLogar.TabIndex = 77;
-            btnLogar.Text = "Entrar";
-            btnLogar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLogar.UseVisualStyleBackColor = false;
-            btnLogar.Click += btnLogar_Click_1;
-            btnLogar.MouseEnter += btnLogar_MouseEnter;
-            btnLogar.MouseLeave += btnLogar_MouseLeave;
-            // 
-            // shadowBtnEntrar
-            // 
-            shadowBtnEntrar.BackColor = Color.White;
-            shadowBtnEntrar.FlatAppearance.BorderColor = Color.White;
-            shadowBtnEntrar.FlatAppearance.MouseDownBackColor = Color.Silver;
-            shadowBtnEntrar.FlatAppearance.MouseOverBackColor = Color.Silver;
-            shadowBtnEntrar.FlatStyle = FlatStyle.Flat;
-            shadowBtnEntrar.ForeColor = Color.White;
-            shadowBtnEntrar.IconChar = FontAwesome.Sharp.IconChar.None;
-            shadowBtnEntrar.IconColor = Color.White;
-            shadowBtnEntrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            shadowBtnEntrar.Location = new Point(28, 349);
-            shadowBtnEntrar.Name = "shadowBtnEntrar";
-            shadowBtnEntrar.Size = new Size(93, 44);
-            shadowBtnEntrar.TabIndex = 70;
-            shadowBtnEntrar.UseVisualStyleBackColor = false;
             // 
             // timer1
             // 
@@ -434,7 +416,6 @@
             // 
             // pnLogin
             // 
-            pnLogin.Controls.Add(pbOndasCinzas);
             pnLogin.Controls.Add(pnFlakesHolder);
             pnLogin.Controls.Add(pbCupcake);
             pnLogin.Controls.Add(pnLoginHolder);
@@ -525,17 +506,6 @@
             pbCupcake.TabIndex = 83;
             pbCupcake.TabStop = false;
             // 
-            // pbOndasCinzas
-            // 
-            pbOndasCinzas.Dock = DockStyle.Bottom;
-            pbOndasCinzas.Image = (Image)resources.GetObject("pbOndasCinzas.Image");
-            pbOndasCinzas.Location = new Point(0, 624);
-            pbOndasCinzas.Name = "pbOndasCinzas";
-            pbOndasCinzas.Size = new Size(580, 76);
-            pbOndasCinzas.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbOndasCinzas.TabIndex = 85;
-            pbOndasCinzas.TabStop = false;
-            // 
             // TelaLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -551,7 +521,9 @@
             Text = "TelaLogin";
             Load += TelaLogin_Load;
             pnLoginHolder.ResumeLayout(false);
-            pnLoginHolder.PerformLayout();
+            pnloginBot.ResumeLayout(false);
+            pnloginBot.PerformLayout();
+            pnButtonsLoginHolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)logoShadow).EndInit();
             pnTitulo.ResumeLayout(false);
@@ -569,16 +541,13 @@
             ((System.ComponentModel.ISupportInitialize)pbFlakes7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbFlakes8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCupcake).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbOndasCinzas).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton shadowBtnSair;
         private Panel pnLoginHolder;
         private FontAwesome.Sharp.IconButton btnSair;
         private FontAwesome.Sharp.IconButton btnLogar;
-        private FontAwesome.Sharp.IconButton shadowBtnEntrar;
         private Label lblSenha;
         private Label lblNome;
         private System.Windows.Forms.Timer timer1;
@@ -603,12 +572,13 @@
         private Panel pnLogin;
         private PictureBox pbCupcake;
         private PictureBox pbCoracao;
-        private Label lblListraNome;
         private Panel pnFlakesHolder;
         private FontAwesome.Sharp.IconPictureBox pbFlakes5;
         private FontAwesome.Sharp.IconPictureBox pbFlakes6;
         private FontAwesome.Sharp.IconPictureBox pbFlakes7;
         private FontAwesome.Sharp.IconPictureBox pbFlakes8;
-        private PictureBox pbOndasCinzas;
+        private Panel pnloginBot;
+        private Label lblListraNome;
+        private Panel pnButtonsLoginHolder;
     }
 }

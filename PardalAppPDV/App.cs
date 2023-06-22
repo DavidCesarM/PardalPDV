@@ -1,4 +1,5 @@
 using FontAwesome.Sharp;
+using PardalAppPDV.Controller;
 using PardalAppPDV.View;
 using System.Drawing;
 using System.Drawing.Text;
@@ -11,8 +12,9 @@ namespace PardalAppPDV
     {
 
 
-        public static IconButton? btnAbrirCaixa_;
-
+        internal static IconButton? btnAbrirCaixa_;
+        Controler c = new Controler();
+        double v;
         //PrivateFontCollection font = new PrivateFontCollection();
         //font.AddFontFile(@"C:\Users\david\Desktop\Projeto\PardalAppPDV\PardalAppPDV\Fonts\Picole-stencil.ttf");
 
@@ -34,13 +36,16 @@ namespace PardalAppPDV
 
             dgInfo.EnableHeadersVisualStyles = false;
             dgPesquisar.EnableHeadersVisualStyles = false;
+            dgPagamento.EnableHeadersVisualStyles = false;
+            // VisualGraphs.RoundBoders(pnparcelasBorder);
+            //pnParcelasHolder.BringToFront();
             lblSideItemSelecionado.BringToFront();
             frmMessages.ShowMsg("Logado com suceso! Bem Vindo!", "sucess", this, 400, duration: 3000);
             lblSideItemSelecionado.Location = new Point(sideMenu.Width - lblSideItemSelecionado.Width, 0);
             pbLogo.Location = new Point(Convert.ToInt32((sideHeader.Width / 2) - (pbLogo.Width / 2)), Convert.ToInt32((sideHeader.Height / 2) - (pbLogo.Height / 2)));
             btnAbrirCaixa_ = btnAbrirCaixa;
+            cbFormaPagamento.SelectedIndex = 0;
 
-            //sideMenu.Font = new Font("Segoe UI", 9);
         }
 
 
@@ -66,6 +71,14 @@ namespace PardalAppPDV
             //############################## HEADER #############################################################
             header.Height = Maths.percent(this.Height, 5);
             pbLogo.Location = new Point((sideHeader.Width / 2) - (pbLogo.Width / 2), (sideHeader.Height / 2) - (pbLogo.Height / 2));
+
+            pnPesquisar.Location = new Point(dgPesquisar.Left, 0);
+            pnPesquisar.Width = dgPesquisar.Width;
+            pnTroco.Left = (pnFinalizarVendas.Width - pnTroco.Width) - 15;
+
+            pnParcelasHolder.Left = (pnFormaPag.Left + pnFormaPag.Width) + 10;
+
+
         }
         private void App_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -208,6 +221,60 @@ namespace PardalAppPDV
         {
             btnSideFecharCaixa.ForeColor = Color.FromArgb(11, 19, 139);
             btnSideFecharCaixa.IconColor = Color.FromArgb(11, 19, 139);
+        }
+
+        private void cbFormaPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFormaPagamento.Text == "Cartão")
+            {
+
+                pnParcelasHolder.Visible = true;
+            }
+            else
+            {
+                pnParcelasHolder.Visible = false;
+                txtParcelas.Text = "";
+                lblValorParcelas.Text = "0";
+
+            }
+
+
+
+        }
+
+        private void txtRecebido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                //troca o . pela virgula
+                e.KeyChar = ',';
+
+                //Verifica se já existe alguma vírgula na string
+                if (txtRecebido.Text.Contains(","))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            //aceita apenas números, tecla backspace.
+            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtParcelas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnLançar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

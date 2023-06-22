@@ -14,17 +14,19 @@ namespace PardalAppPDV.View
     public partial class AbrirCaixa : Form
     {
 
+        App app = new App();
 
         public AbrirCaixa()
         {
             InitializeComponent();
+            this.Left = (app.Width / 2) - (this.Width / 2);
+            this.Top = (app.Height / 2) - (this.Height / 2);
         }
 
         private void AbrirCaixa_Load(object sender, EventArgs e)
         {
-            App app = new App();
-            this.Left = (app.Width / 2) - (this.Width / 2);
-            this.Top = (app.Height / 2) - (this.Height / 2);
+           
+           
             VisualGraphs.RoundBoders(this);
         }
 
@@ -32,7 +34,7 @@ namespace PardalAppPDV.View
         {
             App.btnAbrirCaixa_.IconColor = Color.PaleGreen;
 
-            App.btnAbrirCaixa_.Text = "Caixa Aberto";
+            App.btnAbrirCaixa_.Text = "Caixa Aberto - Pronto para vender";
             this.Close();
         }
     }
