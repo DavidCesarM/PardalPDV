@@ -272,7 +272,7 @@ namespace PardalAppPDV
             }
         }
 
-        private void btnLançar_Click(object sender, EventArgs e)
+        private void btnLancar_Click(object sender, EventArgs e)
         {
 
         }

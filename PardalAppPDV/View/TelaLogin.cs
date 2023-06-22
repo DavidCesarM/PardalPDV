@@ -63,6 +63,8 @@ namespace PardalAppPDV.View
             pbCupcake.Location = new Point(pnLoginHolder.Left - pbCupcake.Width, pnLoginHolder.Bottom - pbCupcake.Height);
 
             pnLoginHolder.Size = new Size(Maths.percent(pnLogin.Width, 40), Maths.percent(pnLogin.Width, 80));
+            pnLoginHolder.Left = (pnLogin.Width/2)-(pnLoginHolder.Width/2);
+            pnLoginHolder.Top = (pnLogin.Height / 2) - (pnLoginHolder.Height / 2);
 
             lblListraNome.Width = pnLoginHolder.Width;
             lblListraCinzaNome.Width = pnLoginHolder.Width;

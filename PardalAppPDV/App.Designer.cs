@@ -111,7 +111,7 @@
             pnPesquisar = new Panel();
             chkDesc = new CheckBox();
             txtPnQuantidade = new Panel();
-            btnLançar = new FontAwesome.Sharp.IconButton();
+            btnLancar = new FontAwesome.Sharp.IconButton();
             txtQuantidade = new TextBox();
             chkCodigo = new CheckBox();
             panel3 = new Panel();
@@ -1253,31 +1253,31 @@
             // 
             txtPnQuantidade.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtPnQuantidade.BorderStyle = BorderStyle.FixedSingle;
-            txtPnQuantidade.Controls.Add(btnLançar);
+            txtPnQuantidade.Controls.Add(btnLancar);
             txtPnQuantidade.Controls.Add(txtQuantidade);
             txtPnQuantidade.Location = new Point(551, 19);
             txtPnQuantidade.Name = "txtPnQuantidade";
             txtPnQuantidade.Size = new Size(130, 23);
             txtPnQuantidade.TabIndex = 21;
             // 
-            // btnLançar
+            // btnLancar
             // 
-            btnLançar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLançar.FlatAppearance.BorderSize = 0;
-            btnLançar.FlatStyle = FlatStyle.Flat;
-            btnLançar.ForeColor = SystemColors.ActiveCaptionText;
-            btnLançar.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            btnLançar.IconColor = Color.FromArgb(11, 19, 139);
-            btnLançar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLançar.IconSize = 25;
-            btnLançar.Location = new Point(99, 0);
-            btnLançar.Name = "btnLançar";
-            btnLançar.Size = new Size(33, 23);
-            btnLançar.TabIndex = 20;
-            btnLançar.TabStop = false;
-            btnLançar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLançar.UseVisualStyleBackColor = true;
-            btnLançar.Click += btnLançar_Click;
+            btnLancar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLancar.FlatAppearance.BorderSize = 0;
+            btnLancar.FlatStyle = FlatStyle.Flat;
+            btnLancar.ForeColor = SystemColors.ActiveCaptionText;
+            btnLancar.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            btnLancar.IconColor = Color.FromArgb(11, 19, 139);
+            btnLancar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLancar.IconSize = 25;
+            btnLancar.Location = new Point(96, -1);
+            btnLancar.Name = "btnLancar";
+            btnLancar.Size = new Size(33, 23);
+            btnLancar.TabIndex = 20;
+            btnLancar.TabStop = false;
+            btnLancar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLancar.UseVisualStyleBackColor = true;
+            btnLancar.Click += btnLancar_Click;
             // 
             // txtQuantidade
             // 
@@ -1566,7 +1566,7 @@
         private DataGridViewTextBoxColumn estoque;
         private Panel pnFinalizarBot;
         private Panel txtPnQuantidade;
-        private FontAwesome.Sharp.IconButton btnLançar;
+        private FontAwesome.Sharp.IconButton btnLancar;
         private TextBox txtQuantidade;
         private Panel footer;
         private DataGridView dgInfo;
